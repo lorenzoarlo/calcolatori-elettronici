@@ -75,6 +75,21 @@
   margin-block: 0.1em;
 }
 
+.center {
+  margin-block: 0.2rem;
+
+  text-align: center;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mono {
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+
 .image-environment,
 .image-wrapper {
   margin-block: 6px;
