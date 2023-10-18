@@ -86,6 +86,7 @@
 
 .mono {
   font-family: monospace;
+  letter-spacing: 1px;
   white-space: nowrap;
 }
 
