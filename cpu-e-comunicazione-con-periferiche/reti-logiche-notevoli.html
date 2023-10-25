@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/index-style.css" />
+    <link rel="stylesheet" href="../styles/content-style.css" />
+    <link rel="icon" type="image/x-icon" href="../resources/favicon.ico">
+    <link rel="apple-touch-icon" href="../resources/favicon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78NHLXDQD8"></script>
+    <script src="../scripts/script.js"></script>
+    <style>:root { --bg-clr: #FFD700; --fg-clr: #262626; }</style>
+    <meta name="theme-color" content="#FFD700" />
+    <meta name="keywords" content="calcolatori elettronici" />
+    <meta name="description" content="Il seguente sito contiene gli appunti e le definizioni del corso 'Calcolatori elettronici T'.">
+    <meta name="robots" content="index">
+    <script defer async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Calcolatori elettronici - CPU e comunicazione con periferiche - Reti logiche notevoli</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header-wrapper">
+            <div class="title-wrapper">
+                <span class="title">
+                    Calcolatori elettronici
+                </span>
+                <span class="subtitle">
+                    by lorenzoarlo
+                </span>
+            </div>
+            <span class="page-title">
+                CPU e comunicazione con periferiche
+            </span>
+        </header>
+        <section class="content-wrapper">
+            <h1 class="section-title content-width">Reti logiche notevoli</h1>
+            <article class="content-container content-width">
+                <div class="definition environment" id="def1-14"><h2 class="environment-title">Definizione - Integrato notevole 244 - Driver 3-state a <span class="math-span">\( 8\)</span> bit</h2><div class="environment-body">     L'integrato notevole 244 è l'equivalente di <span class="math-span">\( 8\)</span> driver 3-state paralleli ma, a differenza dei singoli componenti, sono presenti solo due ingressi di <span class="mono">OE</span> che "piloteranno" <span class="math-span">\( 4\)</span> bit ciascuno.     <br/>     Tale integrato sarà quindi composto, oltre che dai due ingressi di <span class="mono">ENABLE</span>, da <span class="math-span">\( 8\)</span> ingressi e <span class="math-span">\( 8\)</span> uscite. </div></div><div class="definition environment" id="def1-15"><h2 class="environment-title">Definizione - Integrato notevole 245 - Driver 3-state bidirezionale a <span class="math-span">\( 8\)</span> bit</h2><div class="environment-body">     L'integrato notevole 245 è un driver 3-state bidirezionale composto da <span class="math-span">\( 8\)</span> "celle" del tipo     <div class="image-environment"><div class="image-wrapper spaced-60"><img alt="Immagine" src="../resources/integrato-245.png"/></div></div>     In base al valore dell'ingresso <span class="mono">DIR</span>, si avrà che un certo ingresso/uscita sarà attivo mentre l'altro sarà bloccato (quindi sarà possibile la comunicazione da <span class="mono">A</span> a <span class="mono">B</span> e da <span class="mono">B</span> ad <span class="mono">A</span>).     <br/>     Il segnale di <span class="mono">EN</span> si presenta solitamente negato (<span class="mono">EN'</span>) e permette di creare l'impedenza in entrambi i sensi. </div></div><div class="definition environment" id="def1-16"><h2 class="environment-title">Definizione - Integrato notevole 373 - Latch a <span class="math-span">\( 8\)</span> bit con uscita 3-state</h2><div class="environment-body">     L'integrato notevole 373 è l'equivalente di <span class="math-span">\( 8\)</span> Latch CD sulla cui uscita è posto un driver 3-state.      <br/>     Tale integrato sarà quindi composto, oltre che dagli <span class="math-span">\( 8\)</span> ingressi di dato e le <span class="math-span">\( 8\)</span> uscite anche da un ingresso <span class="mono">C</span> (condiviso) e un segnale per abilitare l'uscita (condiviso) solitamente negato (<span class="mono">OE'</span>). </div></div><div class="definition environment" id="def1-17"><h2 class="environment-title">Definizione - Registro edge-triggered a <span class="math-span">\( k\)</span> bit</h2><div class="environment-body">     Un registro a <span class="math-span">\( k\)</span> bit è una rete sequenziale sincrona in grado di memorizzare un dato di <span class="math-span">\( k\)</span> bit.     <div class="image-environment"><div class="image-wrapper spaced-60"><img alt="Immagine" src="../resources/register.png"/></div></div>     Esso è caratterizzato da:     <ul class="list-container"><li class="list-item">un ingresso <span class="mono">CLK</span> per il segnale di clock;         </li><li class="list-item">un bus di <span class="math-span">\( k\)</span> segnali sincroni in ingresso <span class="mono">IN[<span class="math-span">\( k-1, \ldots, 0\)</span>]</span>;         </li><li class="list-item">un ingresso sincrono <span class="mono">WE</span> ("<i>Write Enable</i>") per permettere la <strong>sovrascrittura</strong> del dato precedentemente memorizzato (con <span class="mono">WE = 0</span> ad ogni fronte di clock rimane il segnale memorizzato in precedenza);         </li><li class="list-item">un segnale asincrono <span class="mono">A_RESET</span> ("<i>Asynchronous RESET</i>") che, se attivo, pone a <span class="math-span">\( 0\)</span> tutti i bit memorizzati.     </li></ul>     Per realizzare un registro ad <span class="math-span">\( 1\)</span> bit (da cui poi è facile ottenere un registro a <span class="math-span">\( k\)</span> bit) è possibile ragionare nel seguente modo:     <ul class="list-container"><li class="list-item">se <span class="mono">WE = 1</span>, il flip-flop deve memorizzare l'ingresso <span class="mono">IN</span>;         </li><li class="list-item">se <span class="mono">WE = 0</span>, il flip-flop deve memorizzare il valore precedente, ovvero <span class="mono">Q</span>.     </li></ul>     Dato che è una scelta, un metodo utile per realizzarlo è utilizzare un multiplexer, ovvero     <div class="image-environment"><div class="image-wrapper spaced-70"><img alt="Immagine" src="../resources/circuito-register.png"/></div></div></div></div><div class="definition environment" id="def1-18"><h2 class="environment-title">Definizione - Integrato notevole 374 - Registro edge-triggered a <span class="math-span">\( 8\)</span> bit con uscita 3-state</h2><div class="environment-body">     L'integrato notevole 374 è l'equivalente di un registro edge-triggered a <span class="math-span">\( 8\)</span> bit sulla cui uscita è posto un driver 3-state.      <br/>     Tale integrato sarà quindi composto, oltre che dagli <span class="math-span">\( 8\)</span> ingressi di dato e le <span class="math-span">\( 8\)</span> uscite anche dal segnale di clock <span class="mono">CK</span> anche da un ingresso per abilitare l'uscita solitamente negato (<span class="mono">OE'</span>). </div></div>
+            </article>
+            <nav class="buttons-container content-width">
+                <a class="navigation-button previous" href="comunicazione-con-dispositivi.html" rel="nofollow"><span>Comunicazione con dispositivi</span></a>
+                <a class="navigation-button next" href="comunicazione-con-i-dispositivi-in-pratica.html" rel="nofollow"><span>Comunicazione con i dispositivi in pratica</span></a>
+            </nav>
+        </section>
+        <div class="scroll-to-bottom-button" onclick="scroll_to_bottom()">
+            <span class="material-symbols-outlined">
+                keyboard_double_arrow_down
+            </span>
+        </div>
+        <footer class="footer-wrapper">
+            <div class="copyright-wrapper">
+                <span> &copy; Copyright 2023</span> /
+                <span>made by lorenzoarlo</span>
+            </div>
+            /
+            <div class="privacy-wrapper">
+                <span><a href="https://lorenzoarlo.github.io/privacy-and-cookies/" rel="nofollow">Pannello preferenze cookie</a></span> /
+                <span><a href="https://lorenzoarlo.github.io/privacy-and-cookies/privacy-policy.html" rel="nofollow" target="_blank" >Privacy Policy</a></span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

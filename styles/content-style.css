@@ -47,6 +47,12 @@
   hyphens: auto;
 }
 
+.environment-tail {
+  display: grid;
+  justify-items: center;
+  font-size: 32px;
+}
+
 .definition {
   background-color: var(--definition-bg);
 }
@@ -57,6 +63,10 @@
 
 .myexample {
   background-color: var(--myexample-bg);
+}
+
+.collapsed {
+  display: none;
 }
 
 .mynote {
@@ -81,7 +91,6 @@
   text-align: center;
 
   overflow-x: auto;
-  overflow-y: hidden;
 }
 
 .mono {

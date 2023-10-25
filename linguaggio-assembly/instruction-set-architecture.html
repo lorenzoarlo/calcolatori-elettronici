@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="IT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/index-style.css" />
+    <link rel="stylesheet" href="../styles/content-style.css" />
+    <link rel="icon" type="image/x-icon" href="../resources/favicon.ico">
+    <link rel="apple-touch-icon" href="../resources/favicon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78NHLXDQD8"></script>
+    <script src="../scripts/script.js"></script>
+    <style>:root { --bg-clr: #FFD700; --fg-clr: #262626; }</style>
+    <meta name="theme-color" content="#FFD700" />
+    <meta name="keywords" content="calcolatori elettronici" />
+    <meta name="description" content="Il seguente sito contiene gli appunti e le definizioni del corso 'Calcolatori elettronici T'.">
+    <meta name="robots" content="index">
+    <script defer async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Calcolatori elettronici - Linguaggio Assembly - Instruction Set Architecture</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header-wrapper">
+            <div class="title-wrapper">
+                <span class="title">
+                    Calcolatori elettronici
+                </span>
+                <span class="subtitle">
+                    by lorenzoarlo
+                </span>
+            </div>
+            <span class="page-title">
+                Linguaggio Assembly
+            </span>
+        </header>
+        <section class="content-wrapper">
+            <h1 class="section-title content-width">Instruction Set Architecture</h1>
+            <article class="content-container content-width">
+                <div class="definition environment" id="def2-1"><h2 class="environment-title">Definizione - ISA</h2><div class="environment-body">     L'<i>Instruction Set Architecture</i> (<strong>ISA</strong>) è l'insieme di tutte le istruzioni binarie e dei registri di una CPU.     <br/>     Ogni CPU è caratterizzata da un proprio ISA che può essere del tipo:     <ul class="list-container"><li class="list-item"><strong>RISC</strong> (<i>Reduced Instruction Set Computer</i>), dove l'insieme delle istruzioni ridotto e sono presenti <strong>molti registri</strong> interni;         </li><li class="list-item"><strong>CISC</strong> (<i>Complex Instruction Set Computer</i>), dove l'insieme delle istruzioni è ampio e sono presenti <strong>pochi registri</strong> interni.     </li></ul></div></div><div class="definition environment" id="def2-2"><h2 class="environment-title">Definizione - Caratteristiche e requisiti di un ISA</h2><div class="environment-body">     Nonostante esistano ISA differenti, si ha che essi sono caratterizzati da requisiti e parametri comuni.      Si ha infatti che un generico ISA deve:     <ul class="list-container"><li class="list-item">poter risolvere un qualsiasi problema (considerando i problemi risolvibili algoritmicamente);         </li><li class="list-item">minimizzare il tempo di esecuzione del codice  <span class="mono">CPU<sub>time</sub></span>.     </li></ul>      Il <span class="mono">CPU<sub>time</sub></span> è una caratteristica delle CPU rispetto ad un certo codice che è uguale a:     <div class="center"><span class="mono">CPU<sub>time</sub> = N<sub>istruzioni</sub><span class="math-span">\( \cdot\)</span> CPI<sub>medio</sub><span class="math-span">\( \cdot\)</span> T<sub>clock</sub></span></div>      dove     <ul class="list-container"><li class="list-item"><span class="mono">N<sub>istruzioni</sub></span> è il numero di istruzioni di cui è composto il codice;         </li><li class="list-item"><span class="mono">CPI<sub>medio</sub></span> (<i>Cost Per Instruction<sub>medio</sub></i>) è il costo medio in termini di tempo per istruzione;         </li><li class="list-item"><span class="mono">T<sub>clock</sub></span> è la durata del periodo di clock.     </li></ul>     Per diminuire il <span class="mono">CPU<sub>time</sub></span> è possibile attuare diverse strategie:     <ul class="list-container"><li class="list-item">utilizzare meno istruzioni per risolvere il problema (genericamente un'architettura CISC ne utilizza meno);         </li><li class="list-item">diminuire il <span class="mono">CPI<sub>medio</sub></span> effettuando istruzioni meno complesse (genericamente un'architettura RISC ha istruzioni più veloci);         </li><li class="list-item">diminuire il tempo di clock, considerando però il tempo di propagazione dei segnali nelle reti logiche e considerando che una maggiore frequenza di clock comporta consumi maggiori.     </li></ul></div></div>
+            </article>
+            <nav class="buttons-container content-width">
+                <a class="navigation-button previous" href="index.html" rel="nofollow"><span>Linguaggio Assembly</span></a>
+                
+            </nav>
+        </section>
+        <div class="scroll-to-bottom-button" onclick="scroll_to_bottom()">
+            <span class="material-symbols-outlined">
+                keyboard_double_arrow_down
+            </span>
+        </div>
+        <footer class="footer-wrapper">
+            <div class="copyright-wrapper">
+                <span> &copy; Copyright 2023</span> /
+                <span>made by lorenzoarlo</span>
+            </div>
+            /
+            <div class="privacy-wrapper">
+                <span><a href="https://lorenzoarlo.github.io/privacy-and-cookies/" rel="nofollow">Pannello preferenze cookie</a></span> /
+                <span><a href="https://lorenzoarlo.github.io/privacy-and-cookies/privacy-policy.html" rel="nofollow" target="_blank" >Privacy Policy</a></span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
