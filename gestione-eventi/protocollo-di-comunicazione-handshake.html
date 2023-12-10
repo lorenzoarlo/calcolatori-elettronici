@@ -49,7 +49,7 @@
             LHI R21, 0x6000         ; R21 = 6000 0000h per i segnali su INT_BUTTON
             LB R25, 0x0002(R21)     ; Istruzione dummy per il FREEZE dell'interrupt
             LB R22, 0x0000(R21)     ; Lettura di INT_P
-            BEQZ R22, PORT_HANDL    ; Salta a PORT_HANDL se INT\_P = 0
+            BEQZ R22, PORT_HANDL    ; Salta a PORT_HANDL se INT_P = 0
             ADDUI R20, 0x0001       ; R20 = R20 + 1
             SB R0, 0x0001(R21)      ; Reset di INT_P
             RFE                     ; Termina handler
@@ -65,7 +65,7 @@ ON_STARTUP: ADD R20, R0, R0         ; R20 = 0
             </article>
             <nav class="buttons-container content-width">
                 <a class="navigation-button previous" href="eventi-e-interruzioni.html" rel="nofollow"><span>Eventi e interruzioni</span></a>
-                
+                <a class="navigation-button next" href="../progettazione-dlx/index.html" rel="nofollow"><span>Progettazione DLX</span></a>
             </nav>
         </section>
         <div class="scroll-to-bottom-button" onclick="scroll_to_bottom()">
