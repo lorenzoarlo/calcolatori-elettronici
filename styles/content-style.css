@@ -37,6 +37,12 @@
   padding: 5px;
 }
 
+.overline {
+  padding-top: 0.4em;
+  border-top: 1px solid;
+  line-height: 1.2em;
+}
+
 .code-block {
   display: block;
   background-color: var(--code-bg);
